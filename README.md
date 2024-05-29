@@ -1,7 +1,11 @@
 # Introduction to GPU computing with Simulating Annealing and Metropolis-Hastings algorithm
 
 ## Getting started
-`cd` into the repo directory, then using conda run the following command:
+You will need to download and install conda.
+Follow the instructions at this [page](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html).
+
+
+Once conda is installed, `cd` into the repo directory, then run the following command:
 
 ```{commandline}
 conda env create --file environment.yml
@@ -18,6 +22,9 @@ python experiment.py
 This will output a single box plot of the execution times for experiments on the GPU versus CPU.
 
 ![test](plots/benchmarks.png)
+
+
+If you look into `experiment.py` and `example.py` we can output more plots and run more experiments easily.
 
 ## Goal 
 For a fixed matrix $W$ $\in$ $\mathbb{R}^{m \times n}$ and vector $Y$ $\in \mathbb{R}^{m}$, we want infer $x$ $\in$ $\{-1,1\}^{n}$ for the following model:
