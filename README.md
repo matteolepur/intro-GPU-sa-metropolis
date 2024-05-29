@@ -42,6 +42,7 @@ where
 H_{Y}(x) = \sum_{m}(Y_{m} - \hat{y}_{m})^{2}
 ```
 will be refered to as the energy.
+I believe the key here is that the modes of this target distribution will correspond to states with minimum energy.
 
 ### Metropolis Algorithm 
 Calculating the MH ratio largely simplifies to calculating the difference between the energy of the two states.
