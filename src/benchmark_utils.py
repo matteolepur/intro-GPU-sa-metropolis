@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from pathlib import Path
+
 def create_benchmarks(
         machine: list,
         batch: list,
@@ -34,8 +36,11 @@ def create_benchmarks(
 
 
 def plot_benchmarks(df_benchmarks):
-    fig, ax = plt.subplots()
+    plot_dir = Path("plots")
+    plot_dir.mkdir(parents=True, exist_ok=True)
 
+    fig, ax = plt.subplots()
     sns.boxplot(x='machine', y='total_time', hue='num_experiment_executions', data=df_benchmarks, ax=ax)
 
-    plt.show()
+    plt.savefig(plot_dir.joinpath("benchmarks.png"))
+    plt.close()

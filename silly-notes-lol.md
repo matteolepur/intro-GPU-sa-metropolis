@@ -1,5 +1,4 @@
-
-## Presentation
+## Misc notes
 ### Drivers
 What are NVIDIA drivers?
 
@@ -39,8 +38,6 @@ Tue May 28 21:16:50 2024
 +---------------------------------------------------------------------------------------+
 
 ```
-Here we see that my laptop has ...
-
 
 I found the following command useful especially on the cluster to monitor the GPU usage.
 ```commandline
@@ -50,14 +47,9 @@ This command runs the `nvidia-smi` command every 3 seconds to provide me with an
 
 ## PyTorch
 
-
-#### What is PyTorch?
-- Jax is ...
-- It allows for CPU and GPU usage
-
 #### Using the GPU in PyTorch
-- We must declare `.cuda` because ...
-- 
+We must declare `.cuda` because ...
+ 
 ```
 Tensor.new_tensor(data)
 ```
@@ -72,33 +64,3 @@ Returns a new tensor with the same `dtype` and `device` as Tensor but empty data
 Tensor.to()
 ```
 changes the `dtype` and `device` of the Tensor.
-
-
-## Goal 
-For a fixed matrix $W$ $\in$ $\mathbb{R}^{m \times n}$ and vector $Y$ $\in \mathbb{R}^{m}$, we want infer $x$ $\in$ $\{-1,1\}^{n}$ for the following model:
-$$
-Y = \frac{1}{n}ReLU(Wx).
-$$
-
-We will formulate this problem as an optimization problem using [simulated annealing](https://en.wikipedia.org/wiki/Simulated_annealing) that uses a Metropolis step to target the following [Gibbs-Boltzman](https://en.wikipedia.org/wiki/Boltzmann_distribution) distribution:
-$$
-p_Y(x) = \frac{1}{Z_{\beta}} * \exp(-\beta H_{Y}(x))
-$$
-where 
-$$
-H_{Y}(x) = \sum_{m}(Y_{m} - \hat{y}_{m})^{2}
-$$
-will be refered to as the energy.
-
-### Metropolis Algorithm 
-Calculating the MH ratio largely simplifies to calculating the difference between the energy of the two states.
-
-$$
-\Delta_{ij} = H_{Y}(x_{j}) - H_{Y}(x_{i})
-$$
-
-$$
-p_{accept}
-= 
-\min \Big(1, e^{\Delta_{ij}} \Big)
-$$
