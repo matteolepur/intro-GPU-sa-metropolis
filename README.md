@@ -21,9 +21,10 @@ This will output a single box plot of the execution times for experiments on the
 
 ## Goal 
 For a fixed matrix $W$ $\in$ $\mathbb{R}^{m \times n}$ and vector $Y$ $\in \mathbb{R}^{m}$, we want infer $x$ $\in$ $\{-1,1\}^{n}$ for the following model:
-$$
+
+```math
 Y = \frac{1}{n}ReLU(Wx).
-$$
+```
 
 We will formulate this problem as an optimization problem using [simulated annealing](https://en.wikipedia.org/wiki/Simulated_annealing) that uses a Metropolis step to target the following [Gibbs-Boltzman](https://en.wikipedia.org/wiki/Boltzmann_distribution) distribution:
 $$
