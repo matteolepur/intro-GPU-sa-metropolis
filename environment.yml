@@ -1,4 +1,4 @@
-name: cuda-metropolis
+name: intro-gpu-sa-metropolis
 
 dependencies:
   - matplotlib
