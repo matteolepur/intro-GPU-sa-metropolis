@@ -4,6 +4,10 @@
 You will need to download and install conda.
 Follow the instructions at this [page](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html).
 
+For those on Sockeye add the following to your `~/.bashrc`:
+```{commandline}
+module load miniconda3
+```
 
 Once conda is installed, `cd` into the repo directory, then run the following command:
 
