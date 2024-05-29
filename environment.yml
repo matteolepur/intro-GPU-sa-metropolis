@@ -1,0 +1,12 @@
+name: cuda-metropolis
+
+dependencies:
+  - matplotlib
+  - numpy
+  - pandas
+  - matplotlib
+  - pip
+  - pip:
+      - torch
+      - seaborn
+
